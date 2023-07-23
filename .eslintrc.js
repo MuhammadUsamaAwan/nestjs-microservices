@@ -15,6 +15,5 @@ module.exports = {
   ignorePatterns: ['.eslintrc.js'],
   rules: {
     '@typescript-eslint/no-unused-vars': 'warn',
-    '@typescript-eslint/consistent-type-imports': 'warn',
   },
 };
