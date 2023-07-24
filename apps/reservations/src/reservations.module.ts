@@ -6,7 +6,7 @@ import { ReservationsRepository } from './reservations.repository';
 import { ReservationDocument, ReservationSchema } from './models/reservation.schema';
 import { LoggerModule } from '@app/common';
 import { ConfigModule } from '@nestjs/config';
-import * as Joi from 'Joi';
+import * as Joi from 'joi';
 
 @Module({
   imports: [
