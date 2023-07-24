@@ -2,16 +2,17 @@ import { Injectable } from '@nestjs/common';
 import { CreateReservationDto } from './dto/create-reservation.dto';
 import { UpdateReservationDto } from './dto/update-reservation.dto';
 import { ReservationsRepository } from './reservations.repository';
+import { UserDto } from '@app/common';
 
 @Injectable()
 export class ReservationsService {
   constructor(private readonly reservationsRepository: ReservationsRepository) {}
 
-  async create(createReservationDto: CreateReservationDto) {
+  async create(createReservationDto: CreateReservationDto, { _id: userId }: UserDto) {
     return this.reservationsRepository.create({
       ...createReservationDto,
       timestamp: new Date(),
-      userId: '123',
+      userId,
     });
   }
 
