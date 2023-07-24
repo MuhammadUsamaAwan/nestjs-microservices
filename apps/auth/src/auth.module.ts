@@ -6,6 +6,7 @@ import { UsersModule } from './users/users.module';
 import { LoggerModule } from '@app/common';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import * as Joi from 'Joi';
+import { LocalStategy } from './strategies/local.strategy';
 
 @Module({
   imports: [
@@ -31,6 +32,6 @@ import * as Joi from 'Joi';
     }),
   ],
   controllers: [AuthController],
-  providers: [AuthService],
+  providers: [AuthService, LocalStategy],
 })
 export class AuthModule {}
